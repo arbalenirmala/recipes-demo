@@ -1,0 +1,12 @@
+<div class="stars">
+    @for (star of stars; track $index) {
+        <ng-container>
+            <i
+              class="bi"
+              [class.bi-star]="$index < currentRating"
+              [class.bi-star-fill]="$index >= currentRating"
+              (click)="setRating($index + 1)"
+            ></i>
+          </ng-container>
+    }
+</div>

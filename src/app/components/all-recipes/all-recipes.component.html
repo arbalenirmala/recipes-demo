@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row align-items-start">
+      @for (recipe of recipes; track $index) {
+        <div id="recipes-container" class="col-6">
+          <div class="row recipe-image-container">
+            <div class="col">
+              <img src="{{recipe.image}}" alt="recipe-image" (click)="recipeDetailsPage()" class="recipe-image">
+              <div class="recipe-tags">
+                <hr>
+                {{recipe.cuisine}}   ,              {{recipe.mealType}}
+              </div>
+              <div class="recipe-name">
+                <h3>{{recipe.name}}</h3>
+              </div>
+              <div class="recipe.ratings">
+                <app-review-rating [maxStars]="5" [existingRating]="recipe.rating" (ratingChange)="updateRating($event)"></app-review-rating>
+                 {{recipe.reviewCount}} Ratings 
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    
+  </div>
+  </div>
