@@ -4,11 +4,10 @@ import {ReviewRatingComponent} from '../review-rating/review-rating.component';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-all-recipes',
-  standalone: true,
-  imports: [ReviewRatingComponent],
-  templateUrl: './all-recipes.component.html',
-  styleUrl: './all-recipes.component.scss'
+    selector: 'app-all-recipes',
+    imports: [ReviewRatingComponent],
+    templateUrl: './all-recipes.component.html',
+    styleUrl: './all-recipes.component.scss'
 })
 export class AllRecipesComponent implements OnInit  {
   recipes: any[] = [];

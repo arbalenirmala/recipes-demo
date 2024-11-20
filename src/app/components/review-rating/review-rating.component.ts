@@ -3,11 +3,10 @@ import {FormsModule} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-review-rating',
-  standalone: true,
-  imports: [FormsModule,CommonModule],
-  templateUrl: './review-rating.component.html',
-  styleUrl: './review-rating.component.scss'
+    selector: 'app-review-rating',
+    imports: [FormsModule, CommonModule],
+    templateUrl: './review-rating.component.html',
+    styleUrl: './review-rating.component.scss'
 })
 export class ReviewRatingComponent {
   @Input() maxStars: number = 5; // Total number of stars
