@@ -11,7 +11,9 @@ import { Router } from '@angular/router';
 })
 export class AllRecipesComponent implements OnInit  {
   recipes: any[] = [];
-  constructor(private recipeService: RecipeService ,private router: Router) {}
+  constructor(private recipeService: RecipeService ,private router: Router) {
+    
+  }
 
   ngOnInit(): void {
     this.recipeService.getRecipes().subscribe(
@@ -29,8 +31,10 @@ export class AllRecipesComponent implements OnInit  {
     // You can send the new rating to the server or handle it as needed
   }
 
-  recipeDetailsPage(){
-    this.router.navigate(['/recipedetails']);
+  recipeDetailsPage(recipe: any): void{
+    console.log("recipeDetailsPage");
+    console.log(recipe);
+    this.router.navigate(['/recipedetails'], { state: { recipe } });
   }
 
 }

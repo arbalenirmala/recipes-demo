@@ -1,1 +1,28 @@
-<p>recipe-details works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-5">
+      <img [src]="recipe.image" alt="recipe image">
+    </div>
+    <div class="col-6">
+      <h1>{{ recipe.name }}</h1>
+      <p>
+        <span>Preparation Time- {{recipe.prepTimeMinutes}} Minutes | </span> 
+        <span> Cooking Time- {{recipe.cookTimeMinutes}} Minutes</span>
+      </p>
+
+      <p class="fw-bolder">Ingredients</p>
+      <ul>
+        @for (item of recipe.ingredients; track $index) {
+          <li>{{item}}</li>
+        }
+      </ul>
+
+      <p class="fw-bolder">How to Make?</p>
+      <ul>
+        @for (instruction of recipe.instructions; track $index) {
+          <li>{{instruction}}</li>
+        }
+      </ul>
+    </div>    
+  </div>  
+</div>
